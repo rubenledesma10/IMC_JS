@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC con JS</title>
+</head>
+<body>
+    <h2>Programa para medir su IMC (indice de masa corporal)</h2>
+    <script>
+        function saltar_linea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function imprimir(frase){
+            document.write(frase);
+            saltar_linea();
+        }
+
+        function calcular_imc (peso, altura) {
+            return (peso/(altura*altura));
+        }
+        nombreUser=prompt("Informe su nombre");
+        pesoUser= prompt(nombreUser+ " informe su peso");
+        alturaUser=prompt(nombreUser+ " informe su altura");
+
+        imc_user = calcular_imc(pesoUser, alturaUser);
+
+        imprimir(nombreUser+ ", su indice de masa corporal es de " +imc_user);
+
+        if (imc_user < 18.5){
+            imprimir("Su IMC esta por debajo de lo normal, es una persona muy flaca");
+        }
+
+        if (imc_user >= 18.5) {
+             if (imc_user < 25){
+                imprimir("Su IMC esta es normal");
+             }
+        }
+
+        if (imc_user >= 25) {
+             if (imc_user < 30){
+                imprimir("Su IMC es un poco elevado. Posee sobrepeso");
+             }
+        }
+
+        if (imc_user >= 30){
+            imprimir("Su IMC esta por encima de lo normal, es una persona obesa");
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
